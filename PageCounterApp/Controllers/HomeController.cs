@@ -1,20 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PageCounterApp.Services;
-
+using PageCounterApp.Models;
 namespace PageCounterApp.Controllers
 {
     public class HomeController : Controller
     {
-        private PageCount PageCount = new PageCount();
-        public HomeController(PageCount count)
+        private PageCount PageCount;
+        SimpleInt count;
+        public HomeController() 
         {
-            PageCount = count;
+            count = new SimpleInt();
+            PageCount = new PageCount();
         }
-
+        [HttpGet()]
         public IActionResult Index()
         {
-            PageCount.Count("Home");
-            return View();
+            count.count = PageCount.Count("Home");
+            return View(count);
         }
     }
 }

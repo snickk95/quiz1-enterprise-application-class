@@ -4,10 +4,6 @@
     public interface IPageCount
     {
         //fumction takes in the current page count for that page incrments it then returns the new value
-        public int IncrementPageCount(int curPageCount)
-        {
-            curPageCount++;
-            return curPageCount;
-        }
+        public int IncrementPageCount(int curPageCount);
     }
 }
