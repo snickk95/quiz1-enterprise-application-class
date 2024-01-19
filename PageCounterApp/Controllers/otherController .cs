@@ -4,18 +4,18 @@ using PageCounterApp.Models;
 namespace PageCounterApp.Controllers
 {
     
-    public class HomeController : Controller
+    public class otherController : Controller
     {
         private IPageCount pageCount;
 
-        public HomeController(IPageCount newPageCount) 
+        public otherController(IPageCount newPageCount) 
         {
             pageCount = newPageCount;
         }
         [HttpGet()]
         public IActionResult Index()
         {
-            return View(pageCount.IncrementPageCount("Home"));//returns the int from the interface function call to the view displayed by the model
+            return View(pageCount.IncrementPageCount("other"));//returns the int from the interface function call to the view displayed by the model
         }
     }
 }

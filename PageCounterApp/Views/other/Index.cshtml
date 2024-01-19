@@ -1,0 +1,16 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "Other Page";
+}
+
+<div>
+    <h6 class="display-4">Welcome to the Other Page</h6>
+    <p>
+        Hello!!
+    </p>
+     <!--display the current count of page visits-->
+    <p asp-controller="other" asp-action="Index">the number of visits to the page count is @Model </p>
+        <!--link to the home page-->
+        <p>Check out our <a asp-controller="Home" asp-action="Index">Home page</a>!</p>
+</div>

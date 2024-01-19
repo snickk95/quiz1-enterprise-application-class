@@ -1,8 +1,11 @@
+using PageCounterApp.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+//add service
+builder.Services.AddSingleton<IPageCount, PageCount>();//declare the service as a singltoon to keep the data in memory while running the server
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
